@@ -1,73 +1,73 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NEST.JS CRASH COURSE
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# I. INTRODUCTION & SETUP:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 1. Introduction:
 
-## Description
+- Nest.js is a node.js framework, build up on Express.js
+- Nest.js Embraces TypeScript & Dependency Injection & Modularity
+- Nest.js Enforces clean code and a clear project structure by giving you a series of building blocks
+- Make building complex applications easy
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Docs: https://docs.nestjs.com/
+Crash Course: https://www.youtube.com/watch?v=F_oOtaxb0L8&ab_channel=Academind
 
-## Installation
+## 2. Setup:
 
-```bash
-$ npm install
-```
+    $ npm i -g @nestjs/cli
+    $ nest new project-name
+    $ npm run start:dev
 
-## Running the app
+# II. ARCHITECTURE & EXAMPLE:
 
-```bash
-# development
-$ npm run start
+## 1. Architecture:
 
-# watch mode
-$ npm run start:dev
+- ./src/main.ts > entry file
 
-# production mode
-$ npm run start:prod
-```
+- Files in Nest.js are splitted by modules and features. Each modules represent a feature
 
-## Test
+- Each module should contain the following files:
 
-```bash
-# unit tests
-$ npm run test
+  - Module.ts file:
 
-# e2e tests
-$ npm run test:e2e
+    - this is like a central file that combines Provider and Controller.
+    - You can include other module in this file.
+    - This is how the whole app are connected
+    - The module file export an object to be imported from a different modules
 
-# test coverage
-$ npm run test:cov
-```
+  - Controller.ts file: this file contains business logics and routing
 
-## Support
+  - Service.ts file: this file contain helper functions, async tasks, CRUD from and to the database
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+  - Model.ts file: this file contain the model of the object that are being used in the module
 
-## Stay in touch
+## 2. Decorators:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- @Controller() setup routes
+  Example: @Controller(“/user”) > send request to /user
 
-## License
+- @Get()
 
-Nest is [MIT licensed](LICENSE).
+- @Put()
+
+- @Delete()
+
+- @Patch()
+
+EXAMPLE OF SETTING UP ROUTING:
+
+@Controller(“/user”)
+@Get(“123”)
+
+Endpoint is: /user/123
+
+## 3. Example:
+
+- Try to send requests to these routes and see the files in ./src/products
+  to see how it works
+
+POST('localhost:8000/products') > add a product
+GET('localhost:8000/products') > get all products
+GET('localhost:8000/products/:id') > get a single product
+PATCH('localhost:8000/products/:id') > update product details
+DELETE('localhost:8000/products/:id') > delete a product
