@@ -38,8 +38,6 @@ export class MessagesController {
       throw new NotFoundException('message not found');
     }
 
-    console.log('got here dawg');
-
     return message;
   }
 }
