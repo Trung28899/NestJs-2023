@@ -37,6 +37,8 @@ https://hackmd.io/@jPFZk5X1QHSaAUmKUmRGVg/S1cOAqkzh
 
 ## How to setup Automatic Validation:
 
+(see code in this folder: 3+4:nest_cli_and_pipes)
+
 - Step 1: Tell Nest to use global validation
 
   - See main.ts to see how to tell nest to use global validation
