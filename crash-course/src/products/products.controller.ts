@@ -32,7 +32,6 @@ export class ProductsController {
 
   @Get()
   getAllProducts() {
-    console.log('all product');
     const allProducts = this.productsService.getProducts();
     return { products: allProducts };
   }
