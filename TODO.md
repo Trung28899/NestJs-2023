@@ -13,3 +13,4 @@ BONUS:
   - [ ] What is dependency Injection ?
   - [ ] Why do we need to use Dependency Injection ?
   - [ ] Watch video 28 - 30 to understand how does DI work behind the scene.
+  - [ ] Write out steps to setup DI inside of a module
