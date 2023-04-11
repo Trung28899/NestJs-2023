@@ -37,3 +37,10 @@ See /src/users/dto/user.dto.ts
 See /src/interceptors/serialize.interceptor.ts
 
 try to send a request where the interceptor is used
+
+---
+
+Custom decorator:
+
+See /src/interceptors/serialize.interceptor.ts
+See the use of Serialize

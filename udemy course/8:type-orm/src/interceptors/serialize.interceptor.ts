@@ -8,8 +8,16 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
 
+/*
+    This is the typing for class. As long as the argument or variable 
+    is a class, it will satisfy this interface
+*/
+interface ClassConstructor {
+  new (...args: any[]);
+}
+
 // custom decorator
-export function Serialize(dto: any) {
+export function Serialize(dto: ClassConstructor) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 

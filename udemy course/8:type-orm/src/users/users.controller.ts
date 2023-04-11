@@ -18,6 +18,9 @@ import {
   Serialize,
 } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
+
+// Interceptor is applied for all routes in this controller
+@Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
   constructor(private userService: UsersService) {}
@@ -31,7 +34,6 @@ export class UsersController {
   // in user.entity.ts to exclude a property
   // @UseInterceptors(SerializeInterceptor) apply the custom interceptor to this route (commit: "serialization in the Interceptor")
   // @UseInterceptors(SerializeInterceptor)
-  @Serialize(UserDto)
   @Get('/:id')
   findUser(@Param('id') id: string) {
     console.log('Handler is running');

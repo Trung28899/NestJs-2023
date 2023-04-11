@@ -27,9 +27,10 @@ BONUS:
 
 - See how to do CRUD with type orm
 
-# Section 10:
+# Section 10: this module is all about writing custom interceptor and custom decorator
 
 - [ ] What is serialization ? (video 61)
 - [ ] How to exclude response properties (video 61)
 - [ ] Problem and solution to serialization (video 62)
 - [ ] How to build interceptors (video 63)
+- [ ] See the note INFO.md and write out all information
