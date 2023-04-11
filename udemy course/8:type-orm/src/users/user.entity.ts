@@ -9,7 +9,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
   to be call with entity instances, not plain object
 */
 import { AfterInsert, AfterRemove, AfterUpdate } from 'typeorm';
-import { Exclude } from 'class-transformer';
+// import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
@@ -21,8 +21,8 @@ export class User {
 
   // @Exclude() helps excluding the property when the user entity is
   // returned in the response
+  // @Exclude()
   @Column()
-  @Exclude()
   password: string;
 
   // function will run after a new record is inserted into the DB

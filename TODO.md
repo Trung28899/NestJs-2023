@@ -32,4 +32,4 @@ BONUS:
 - [ ] What is serialization ? (video 61)
 - [ ] How to exclude response properties (video 61)
 - [ ] Problem and solution to serialization (video 62)
-- [ ] How to build interceptors
+- [ ] How to build interceptors (video 63)
