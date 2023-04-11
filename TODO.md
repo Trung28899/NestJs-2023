@@ -14,3 +14,22 @@ BONUS:
   - [ ] Why do we need to use Dependency Injection ?
   - [ ] Watch video 28 - 30 to understand how does DI work behind the scene.
   - [ ] Write out steps to setup DI inside of a module
+
+# Section 8:
+
+- [ ] Show project details
+- [ ] Write steps on:
+  - [ ] Making connection to the database
+  - [ ] Steps on How to create an Entity (video 44)
+  - [ ] Steps on how to create a repository
+
+# Section 9:
+
+- See how to do CRUD with type orm
+
+# Section 10:
+
+- [ ] What is serialization ? (video 61)
+- [ ] How to exclude response properties (video 61)
+- [ ] Problem and solution to serialization (video 62)
+- [ ] How to build interceptors
