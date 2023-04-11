@@ -14,7 +14,7 @@ import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user-dto';
 import { UsersService } from './users.service';
 import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
-
+import { UserDto } from './dtos/user.dto';
 @Controller('auth')
 export class UsersController {
   constructor(private userService: UsersService) {}
@@ -26,8 +26,9 @@ export class UsersController {
 
   // @UseInterceptors(ClassSerializerInterceptor) works with @Exclude()
   // in user.entity.ts to exclude a property
-  // @UseInterceptors(SerializeInterceptor) apply the custom interceptor to this route
-  @UseInterceptors(SerializeInterceptor)
+  // @UseInterceptors(SerializeInterceptor) apply the custom interceptor to this route (commit: "serialization in the Interceptor")
+  // @UseInterceptors(SerializeInterceptor)
+  @UseInterceptors(new SerializeInterceptor(UserDto))
   @Get('/:id')
   findUser(@Param('id') id: string) {
     console.log('Handler is running');
