@@ -7,13 +7,14 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
+import { UserDto } from 'src/users/dtos/user.dto';
 
 // search for differences between implements vs extends
 export class SerializeInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     // Run something before a request is handled
     // by the request handler (put any code that run before the handler down below)
-    console.log('Running interceptor before the handler');
+    // console.log('Running interceptor before the handler');
     // context contains information about the request
     // console.log(context)
 
@@ -21,9 +22,16 @@ export class SerializeInterceptor implements NestInterceptor {
       map((data: any) => {
         // Run something before the responses is sent out
         // (put any code that run before the response is sent out here)
-        console.log('Running interceptor before response is sent out');
+        // console.log('Running interceptor before response is sent out');
         // data contains information about the response
-        console.log(data);
+        // console.log(data);
+
+        // turning data into an instance of the UserDto
+        return plainToClass(UserDto, data, {
+          // this property exclude the properties
+          // that aren't marked as Exposed in the DTO
+          excludeExtraneousValues: true,
+        });
       }),
     );
   }
