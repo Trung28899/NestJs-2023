@@ -13,7 +13,10 @@ import {
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user-dto';
 import { UsersService } from './users.service';
-import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
+import {
+  SerializeInterceptor,
+  Serialize,
+} from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 @Controller('auth')
 export class UsersController {
@@ -28,7 +31,7 @@ export class UsersController {
   // in user.entity.ts to exclude a property
   // @UseInterceptors(SerializeInterceptor) apply the custom interceptor to this route (commit: "serialization in the Interceptor")
   // @UseInterceptors(SerializeInterceptor)
-  @UseInterceptors(new SerializeInterceptor(UserDto))
+  @Serialize(UserDto)
   @Get('/:id')
   findUser(@Param('id') id: string) {
     console.log('Handler is running');

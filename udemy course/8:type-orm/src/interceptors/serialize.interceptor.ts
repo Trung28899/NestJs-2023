@@ -8,6 +8,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
 
+// custom decorator
+export function Serialize(dto: any) {
+  return UseInterceptors(new SerializeInterceptor(dto));
+}
+
 // search for differences between implements vs extends
 export class SerializeInterceptor implements NestInterceptor {
   constructor(private dto: any) {}
