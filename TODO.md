@@ -6,12 +6,12 @@
 
 BONUS:
 
-- [ ] Understand the concept of Inversion of Control
-  - [ ] What is it ? (https://hackmd.io/@jPFZk5X1QHSaAUmKUmRGVg/S1cOAqkzh)
-  - [ ] Explain why we need to follow this principle
+- [x] Understand the concept of Inversion of Control
+  - [x] What is it ? (https://hackmd.io/@jPFZk5X1QHSaAUmKUmRGVg/S1cOAqkzh)
+  - [x] Explain why we need to follow this principle
 - [ ] Answer the following about Dependency Injection:
-  - [ ] What is dependency Injection ?
-  - [ ] Why do we need to use Dependency Injection ?
+  - [x] What is dependency Injection ?
+  - [x] Why do we need to use Dependency Injection ?
   - [ ] Watch video 28 - 30 to understand how does DI work behind the scene.
   - [ ] Write out steps to setup DI inside of a module
 

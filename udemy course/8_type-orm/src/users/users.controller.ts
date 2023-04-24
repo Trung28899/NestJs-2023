@@ -20,7 +20,7 @@ import {
 import { UserDto } from './dtos/user.dto';
 
 // Interceptor is applied for all routes in this controller
-@Serialize(UserDto)
+// @Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
   constructor(private userService: UsersService) {}

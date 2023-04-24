@@ -1,5 +1,7 @@
 # Section 8: TypeORM
 
+## 1. Fundamentals:
+
 - Commands:
   '$ npm install @nestjs/typeorm typeorm sqlite3'
 
@@ -11,3 +13,5 @@
   - Databases such as: SQLite, Postgres, MySQL, MongoDB
 
 - Mongoose can only be used for MongoDB
+
+## 2.
