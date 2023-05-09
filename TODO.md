@@ -17,10 +17,10 @@ BONUS:
 
 # Section 8:
 
-- [ ] Show project details
+- [x] Show project details
 - [ ] Write steps on:
-  - [ ] Making connection to the database
-  - [ ] Steps on How to create an Entity (video 44)
+  - [x] Making connection to the database
+  - [x] Steps on How to create an Entity (video 44)
   - [ ] Steps on how to create a repository
 
 # Section 9:

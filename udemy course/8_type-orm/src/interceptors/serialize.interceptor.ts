@@ -10,7 +10,7 @@ import { plainToClass } from 'class-transformer';
 
 /*
     This is the typing for class. As long as the argument or variable 
-    is a class, it will satisfy this interface
+    is a class, it will satisfy this interface. See line 20 of this file to understand more
 */
 interface ClassConstructor {
   new (...args: any[]);
