@@ -1,8 +1,4 @@
-import {
-  BadRequestException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { UsersService } from './users.service';
 /*
     scrypt is a hash function
@@ -54,7 +50,7 @@ export class AuthService {
     const hash = (await scrypt(password, salt, 32)) as Buffer;
 
     if (storedHash !== hash.toString('hex')) {
-      return new BadRequestException('bad password');
+      throw new BadRequestException('bad password');
     }
 
     return user;
