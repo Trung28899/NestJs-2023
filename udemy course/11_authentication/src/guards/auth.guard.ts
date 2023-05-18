@@ -5,6 +5,11 @@ export class AuthGuard implements CanActivate {
   canActivate(context: ExecutionContext) {
     const request = context.switchToHttp().getRequest();
 
+    /*
+        This function will return a boolean value
+        If there is value in request.session.userId > return true
+        If there is no value > return false > Not authorized
+    */
     return request.session.userId;
   }
 }

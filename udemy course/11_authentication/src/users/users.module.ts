@@ -14,7 +14,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
     AuthService,
     /*
       Defining global interceptor
-      Any other module accross the app will have the interceptor applied
+      Any other module and route accross the app will have the interceptor applied
       Not just user module
     */
     {
