@@ -16,6 +16,12 @@ content-type: application/json
     "password": "trungtrinh38"
 }
 
+### Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+### Sign out
+POST http://localhost:3000/auth/signout
+
 ### Find a particular user with a given ID
 GET http://localhost:3000/auth/17
 
@@ -33,9 +39,3 @@ content-type: application/json
     "email": "trung28899@gmail.com",
     "password": "playingnice"
 }
-
-### Get the currently signed in user
-GET http://localhost:3000/auth/whoami
-
-### Sign out
-POST http://localhost:3000/auth/signout
