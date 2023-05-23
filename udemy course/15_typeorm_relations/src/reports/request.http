@@ -4,8 +4,8 @@ Content-Type: application/json
 {
     "make": "Mercedes", 
     "model": "Corolla", 
-    "year": 1980, 
-    "milage": 100000, 
+    "year": 1988, 
+    "milage": 10000, 
     "lng": 0, 
     "lat": 0, 
     "price": 500000
